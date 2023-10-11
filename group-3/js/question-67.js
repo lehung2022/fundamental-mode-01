@@ -1,0 +1,8 @@
+//#Source https://bit.ly/2neWfJ2 
+const composeRight = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)));
+const add = (x, y) => x + y;
+const square = x => x * x;
+const addAndSquare = composeRight(add, square);
+
+console.log(addAndSquare(1, 2));
+console.log(addAndSquare(3, 2));
